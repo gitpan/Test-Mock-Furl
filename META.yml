@@ -1,0 +1,41 @@
+---
+abstract: 'Mocks Furl for testing'
+author:
+  - 'Dai Okabayashi <bayashi@cpan.org>'
+build_requires:
+  Furl: 0
+  Test::AllModules: 0
+  Test::More: 0.88
+configure_requires:
+  Module::Build: 0.38
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4005, CPAN::Meta::Converter version 2.130880'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Test-Mock-Furl
+provides:
+  Furl:
+    file: lib/Test/Mock/Furl/Furl.pm
+  Furl::Request:
+    file: lib/Test/Mock/Furl/Request.pm
+  Furl::Response:
+    file: lib/Test/Mock/Furl/Response.pm
+  Test::Mock::Furl:
+    file: lib/Test/Mock/Furl.pm
+    version: 0.000001
+  Test::Mock::Furl::Furl:
+    file: lib/Test/Mock/Furl/Furl.pm
+  Test::Mock::Furl::Request:
+    file: lib/Test/Mock/Furl/Request.pm
+  Test::Mock::Furl::Response:
+    file: lib/Test/Mock/Furl/Response.pm
+requires:
+  Exporter: 0
+  Test::MockObject: 0
+  perl: 5.008001
+resources:
+  license: http://dev.perl.org/licenses/
+  repository: http://github.com/bayashi/Test-Mock-Furl
+version: 0.000001
