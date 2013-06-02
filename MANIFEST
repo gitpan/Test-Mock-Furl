@@ -2,6 +2,7 @@ Build.PL
 Changes
 lib/Test/Mock/Furl.pm
 lib/Test/Mock/Furl/Furl.pm
+lib/Test/Mock/Furl/HTTP.pm
 lib/Test/Mock/Furl/Request.pm
 lib/Test/Mock/Furl/Response.pm
 Makefile.PL
@@ -12,7 +13,9 @@ t/00_compile.t
 t/01_mocked_furl.t
 t/02_mocked_req.t
 t/03_mocked_res.t
-t/04_basic.t
+t/04_mocked_http.t
+t/10_basic.t
+t/11_basic_http.t
 xt/01_perlcritic.t
 xt/02_pod-coverage.t
 xt/03_pod.t

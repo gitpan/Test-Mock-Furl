@@ -1,40 +1,37 @@
-package Test::Mock::Furl::Request;
+package Test::Mock::Furl::HTTP;
 use strict;
 use warnings;
 use Test::MockObject;
 use parent 'Exporter';
-our @EXPORT = qw/$Mock_furl_req $Mock_furl_request/;
+our @EXPORT = qw/$Mock_furl_http/;
 
-our $Mock_furl_req;
-our $Mock_furl_request;
+our $Mock_furl_http;
 
 BEGIN {
-    $Mock_furl_request = $Mock_furl_req = Test::MockObject->new;
-    $Mock_furl_req->fake_module(
-        'Furl::Request', 
+    $Mock_furl_http = Test::MockObject->new;
+    $Mock_furl_http->fake_module(
+        'Furl::HTTP', 
         new => sub {
-            $Mock_furl_req->{new_args} = [@_];
-            $Mock_furl_req;
+            $Mock_furl_http->{new_args} = [@_];
+            $Mock_furl_http;
         }
     );
 }
 
-$Mock_furl_req->set_always('authorization_basic' => '');
-$Mock_furl_req->set_always('header' => '');
-$Mock_furl_req->set_always('content' => '');
+#$Mock_furl_http->set_always('request' => '');
 
 sub new {
-    $Mock_furl_req;
+    $Mock_furl_http;
 };
 
-$Mock_furl_req->mock(
+$Mock_furl_http->mock(
     '-new_args' => sub {
-        delete $Mock_furl_req->{new_args};
+        delete $Mock_furl_http->{new_args};
     },
 );
 
 package # hide from PAUSE
-    Furl::Request;
+    Furl::HTTP;
 
 our $VERSION = 'Mocked';
 
@@ -44,12 +41,12 @@ __END__
 
 =head1 NAME
 
-Test::Mock::Furl::Request - Mock Furl::Request
+Test::Mock::Furl::HTTP - Mock Furl::HTTP
 
 
 =head1 SYNOPSIS
 
-    use Test::Mock::Furl::Request;
+    use Test::Mock::Furl::HTTP;
 
 
 =head1 DESCRIPTION

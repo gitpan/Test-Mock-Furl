@@ -5,17 +5,19 @@ use Test::MockObject;
 use parent 'Exporter';
 our @EXPORT = qw/
     $Mock_furl
+    $Mock_furl_http
     $Mock_furl_req $Mock_furl_request
     $Mock_furl_res $Mock_furl_resp $Mock_furl_response
 /;
 
-our $VERSION = '0.000001';
+our $VERSION = '0.01';
 
 BEGIN {
     # Don't load the mock classes if the real ones are already loaded
     my $mo = Test::MockObject->new;
     my @mock_classes = (
         [ 'Furl'     => '$Mock_furl' ],
+        [ 'HTTP'     => '$Mock_furl_http' ],
         [ 'Request'  => '$Mock_furl_request $Mock_furl_req' ],
         [ 'Response' => '$Mock_furl_response $Mock_furl_resp $Mock_furl_res' ],
     );
@@ -46,6 +48,8 @@ Test::Mock::Furl - Mocks Furl for testing
 
 =head1 SYNOPSIS
 
+The test of mocked Furl.
+
     use Test::More;
     use Test::Mock::Furl;
     use Furl;
@@ -65,6 +69,28 @@ Test::Mock::Furl - Mocks Furl for testing
 
     done_testing;
 
+And mock test of Furl::HTTP is like below.
+
+    use Test::More;
+    use Test::Mock::Furl;
+
+    use Furl::HTTP;
+
+    $Mock_furl_http->mock(
+        request => sub {
+            ( 1, 200, 'OK', ['content-type' => 'text/plain'], 'mock me baby!' );
+        },
+    );
+
+    my $furl = Furl::HTTP->new;
+    my @res  = $furl->request(
+        method => 'GET', host => 'example.com', port => 80, path => '/',
+    );
+
+    is $res[4], 'mock me baby!';
+
+    done_testing;
+
 
 =head1 DESCRIPTION
 
@@ -80,13 +106,17 @@ The following variables are exported by default:
 
 The mock L<Furl> object - a Test::MockObject object
 
+=item $Mock_furl_http
+
+The mock L<Furl::HTTP> object - a Test::MockObject object
+
 =item $Mock_furl_req, $Mock_furl_request
 
-The mock Furl::Request object - a Test::MockObject object
+The mock L<Furl::Request> object - a Test::MockObject object
 
 =item $Mock_furl_res, $Mock_furl_response
 
-The mock Furl::Response object - a Test::MockObject object
+The mock L<Furl::Response> object - a Test::MockObject object
 
 =back
 

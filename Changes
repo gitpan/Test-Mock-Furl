@@ -1,4 +1,10 @@
 Revision history for Perl extension Test::Mock::Furl
 
-0.01    Sun Jun  2 14:10:13 JST 2013
+0.01    Sun Jun  2 20:05:14 JST 2013
+        - support to mock Furl::HTTP as $Mock_furl_http
+        - sorted tests
+        - use tricks package for PAUSE
+        - etc
+
+0.000001 Sun Jun  2 14:10:13 JST 2013
         - original version

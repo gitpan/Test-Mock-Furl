@@ -13,7 +13,8 @@ BEGIN {
     $Mock_furl->fake_new('Furl');
 }
 
-package Furl;
+package # hide from PAUSE
+    Furl;
 use strict;
 use warnings;
 

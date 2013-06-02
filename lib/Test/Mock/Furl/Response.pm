@@ -26,7 +26,8 @@ $Mock_furl_res->set_always('code' => 200);
 $Mock_furl_res->set_always('content' => '');
 $Mock_furl_res->set_always('is_success' => 1);
 
-package Furl::Response;
+package # hide from PAUSE
+    Furl::Response;
 
 our $VERSION = 'Mocked';
 
