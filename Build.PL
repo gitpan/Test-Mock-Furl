@@ -12,10 +12,12 @@ my $builder = Module::Build->new(
     },
     build_requires      => {
         'Test::More' => 0.88,
+        'Test::AllModules' => 0.11,
     },
     requires => {
         'perl' => '5.008001',
         'Test::MockObject' => 0,
+        'parent' => 0,
         'Exporter' => 0,
         'Furl' => 0,
     },

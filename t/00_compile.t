@@ -1,14 +1,9 @@
 use strict;
-use Test::More;
+use Test::AllModules;
 
 BEGIN {
-    use_ok 'Test::Mock::Furl';
-    use_ok 'Test::Mock::Furl::Furl';
-    use_ok 'Test::Mock::Furl::HTTP';
-    use_ok 'Test::Mock::Furl::Request';
-    use_ok 'Test::Mock::Furl::Response';
+    all_ok(
+        search_path => 'Test::Mock::Furl',
+        use_ok      => 1,
+    );
 }
-
-diag( "Testing Test::Mock::Furl $Test::Mock::Furl::VERSION" );
-
-done_testing;

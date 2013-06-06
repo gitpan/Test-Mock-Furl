@@ -1,5 +1,10 @@
 Revision history for Perl extension Test::Mock::Furl
 
+0.03    Thu Jun  6 09:17:35 JST 2013
+    [NO CODE CHANGES]
+        - switched back to Test::AllModules
+        - added deoendent module in Build.PL
+
 0.02    Tue Jun  4 09:47:19 JST 2013
         - fixed broken tests
         - Furl has been required

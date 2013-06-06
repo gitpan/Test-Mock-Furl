@@ -3,6 +3,7 @@ abstract: 'Mocks Furl for testing'
 author:
   - 'Dai Okabayashi <bayashi@cpan.org>'
 build_requires:
+  Test::AllModules: 0.11
   Test::More: 0.88
 configure_requires:
   Module::Build: 0.38
@@ -16,7 +17,7 @@ name: Test-Mock-Furl
 provides:
   Test::Mock::Furl:
     file: lib/Test/Mock/Furl.pm
-    version: 0.02
+    version: 0.03
   Test::Mock::Furl::Furl:
     file: lib/Test/Mock/Furl/Furl.pm
   Test::Mock::Furl::HTTP:
@@ -29,8 +30,9 @@ requires:
   Exporter: 0
   Furl: 0
   Test::MockObject: 0
+  parent: 0
   perl: 5.008001
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/bayashi/Test-Mock-Furl
-version: 0.02
+version: 0.03

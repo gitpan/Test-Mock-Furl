@@ -16,6 +16,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
+            "Test::AllModules" : "0.11",
             "Test::More" : "0.88"
          }
       },
@@ -29,6 +30,7 @@
             "Exporter" : "0",
             "Furl" : "0",
             "Test::MockObject" : "0",
+            "parent" : "0",
             "perl" : "5.008001"
          }
       }
@@ -36,7 +38,7 @@
    "provides" : {
       "Test::Mock::Furl" : {
          "file" : "lib/Test/Mock/Furl.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       },
       "Test::Mock::Furl::Furl" : {
          "file" : "lib/Test/Mock/Furl/Furl.pm"
@@ -60,5 +62,5 @@
          "url" : "http://github.com/bayashi/Test-Mock-Furl"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
