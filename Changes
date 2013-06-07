@@ -1,5 +1,9 @@
 Revision history for Perl extension Test::Mock::Furl
 
+0.04    Sat Jun  8 01:10:08 JST 2013
+    [NO CODE CHANGES]
+        - support Win32
+
 0.03    Thu Jun  6 09:17:35 JST 2013
     [NO CODE CHANGES]
         - switched back to Test::AllModules
