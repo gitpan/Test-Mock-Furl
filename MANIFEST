@@ -16,6 +16,7 @@ t/03_mocked_res.t
 t/04_mocked_http.t
 t/10_basic.t
 t/11_basic_http.t
+t/12_basic_methods.t
 xt/01_perlcritic.t
 xt/02_pod-coverage.t
 xt/03_pod.t

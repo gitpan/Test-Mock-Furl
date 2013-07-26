@@ -10,7 +10,7 @@ our @EXPORT = qw/
     $Mock_furl_res $Mock_furl_resp $Mock_furl_response
 /;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 BEGIN {
     # Don't load the mock classes if the real ones are already loaded
